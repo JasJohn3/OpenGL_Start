@@ -2,11 +2,15 @@
 #include <string>
 #include <fstream>
 #include <GLFW/glfw3.h>
+
+void CharacterCreator();
+
 using namespace std;
 
 
-int main(void)
+int main(int argc,char**argv)
 {
+	CharacterCreator();
 	GLFWwindow* window;
 
 	/* Initialize the library */
@@ -14,7 +18,7 @@ int main(void)
 		return -1;
 
 	/* Create a windowed mode window and its OpenGL context */
-	window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+	window = glfwCreateWindow(800, 800, "Board", NULL, NULL);
 	if (!window)
 	{
 		glfwTerminate();
@@ -33,6 +37,8 @@ int main(void)
 		glVertex2f(-0.5f, -0.5f);
 		glVertex2f(0.0f, 0.5f);
 		glVertex2f(0.5f, -0.5f);
+		
+		
 		glEnd();
 
 
@@ -46,7 +52,7 @@ int main(void)
 	glfwTerminate();
 	return 0;
 }
-/*
+void CharacterCreator() {
 	ofstream createCharacter("characters.txt");
 	if (createCharacter.is_open())
 	{
@@ -65,10 +71,10 @@ int main(void)
 	int magic;
 	int armour;
 
-	while (loop!=0)
+	while (loop != 0)
 	{
 		cout << "Welcome Please Enter your Desired User Name!" << endl;
-		cin>>username;
+		cin >> username;
 		cout << "Please Select a Class: DeathKnight, Paladin, Mage" << endl;
 		cin >> classname;
 		cout << "Please Select a race: Human, Elf, Undead" << endl;
@@ -80,7 +86,7 @@ int main(void)
 		cout << "Please Select a starting Armour Level" << endl;
 		cin >> armour;
 
-		createCharacter <<"UserID: "<< userid <<" " << "User Name: " << username << endl;
+		createCharacter << "UserID: " << userid << " " << "User Name: " << username << endl;
 		createCharacter << "Character Class: " << classname << " " << "Character Race: " << racename << endl;
 		createCharacter << "Character Attack: " << attack << " " << "Character Magic: " << magic << " " << "Character Armour: " << armour << endl;
 
@@ -90,4 +96,7 @@ int main(void)
 
 	}
 	createCharacter.close();
+}
+/*
+
 */

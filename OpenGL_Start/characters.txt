@@ -1,0 +1,3 @@
+UserID: 1 User Name: Jason
+Character Class: DeathKnight Character Race: Human
+Character Attack: 100 Character Magic: 100 Character Armour: 100
